@@ -1,0 +1,36 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+<a href="/Home/GetContent">Siteye Git</a>
+
+
+
+<script>
+
+
+    // Javascript fetch ile mvc tarafındaki bir action'a istek yapabildim!! ve aynı zamanda istek yaptığım action'dan geriye return content döndügü için, actiondan gelen veriyi json ile okuyabildim!!
+    window.onload=function(){
+    
+        fetch('/Home/GetContent')
+        .then(response=>{
+
+            return response.json();
+        })
+        .then(data=>{
+        
+            alert(data.name);
+        
+        })
+
+
+    };
+</script>
+
+
+
